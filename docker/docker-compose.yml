@@ -1,0 +1,30 @@
+services:
+  # ───────────────────────────────────────────
+  mosquitto:
+    image: eclipse-mosquitto:2
+    container_name: mosquitto
+    ports:
+      - "1883:1883"
+    volumes:
+      - ./mosquitto.conf:/mosquitto/config/mosquitto.conf
+    restart: unless-stopped
+
+  # ───────────────────────────────────────────
+  sensor_sim:
+    build:
+      context: ..                # katalog z Cargo.toml
+      dockerfile: docker/Dockerfile
+    depends_on:
+      - mosquitto
+    environment:
+      MQTT_URL: tcp://mosquitto:1883
+      SENSOR_ID: alpha-01
+      INTERVAL_SEC: 5         # co ile sekund generować próbkę
+      BASELINE_MSV: 0.05
+      JITTER_MSV: 0.01
+      SPIKE_PROB: 0.02
+      SPIKE_MUL: 4.0
+    restart: unless-stopped
+    deploy:
+      replicas: 1              # docker compose up --scale sensor_sim=5 nadpisze
+
