@@ -18,12 +18,13 @@ services:
       - mosquitto
     environment:
       MQTT_URL: tcp://mosquitto:1883
-      SENSOR_ID: alpha-01
-      INTERVAL_SEC: 5         # co ile sekund generować próbkę
-      BASELINE_MSV: 0.05
-      JITTER_MSV: 0.01
-      SPIKE_PROB: 0.02
-      SPIKE_MUL: 4.0
+      INTERVAL_SEC: 5        
+
+      SENSOR__ID:              alpha-01
+      SENSOR__BASELINE_MSV:    0.05
+      SENSOR__JITTER_MSV:      0.01
+      SENSOR__SPIKE_PROB:      0.02
+      SENSOR__SPIKE_MUL:       4.0
     restart: unless-stopped
     deploy:
       replicas: 1              # docker compose up --scale sensor_sim=5 nadpisze

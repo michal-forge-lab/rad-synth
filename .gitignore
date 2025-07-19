@@ -1,0 +1,38 @@
+# === Rust build artifacts ===
+/target/
+
+# === Binaries ===
+**/*.exe
+**/*.dll
+**/*.so
+**/*.dylib
+
+# === Backup / temp files ===
+**/*~
+**/*.swp
+**/*.swo
+*.bak
+
+# === IDE / Editor ===
+/.vscode/
+/.idea/
+*.code-workspace
+
+# === OS / file system ===
+.DS_Store
+Thumbs.db
+
+# === Cargo specific ===
+/Cargo.lock     # tylko dla bibliotek – zostaw jeśli tworzysz binarkę
+/.cargo/
+
+# === dotenv / config ===
+.env
+*.toml.backup
+
+# === Docker ===
+/docker-data/
+/*.log
+
+# === Misc ===
+/node_modules/
