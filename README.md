@@ -117,6 +117,17 @@ Run:
 docker compose up --build
 ```
 
+If everything works, you should see something like this:
+```
+alpha-01   →   0.0527  (2025-07-20 ...)
+uv         →   5.6012  (2025-07-20 ...)
+neutron    → 1200.0000 (2025-07-20 ...)
+```
+
+![Docker Compose up](docs/img/docker-compose.png)
+
+> *Above: Successful build and startup of the simulation and broker containers. "sensor_sim" emits virtual sensor data and connects to the Mosquitto MQTT broker.*
+
 ---
 
 ## Extending
@@ -139,4 +150,6 @@ docker compose up --build
 
 ## License
 
-MIT — see `LICENSE`.
+© 2025 Astrophysical Hub — All rights reserved.  
+The source code is proprietary; redistribution without written permission is prohibited.  
+See [LICENSE](./LICENSE) for full terms.
