@@ -115,6 +115,8 @@ Run:
 
 ```bash
 docker compose up --build
+#or
+docker compose -p sim up --build
 ```
 
 If everything works, you should see something like this:
