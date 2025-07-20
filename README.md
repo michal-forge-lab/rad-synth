@@ -1,4 +1,4 @@
-# Sensor Sim v0.2 — Modular Space-Radiation Simulator
+# Rad Sim — Modular Space-Radiation Simulator
 
 Generates realistic synthetic data from three virtual sensors:
 
